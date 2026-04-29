@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import json
+from rediscon import salvar_no_redis
 
 load_dotenv()
 
@@ -47,12 +48,13 @@ def select_collection(col):
         else:
             print(f"Índice inválido, escolha entre 1 e {len(docs)}.")
 
-def read_document(col):
-    print("\nSelecione o documento que deseja visualizar: ")
+def read_document(col, doc_name):
+    print(f"\nSelecione o documento que deseja visualizar: ")
     doc = select_collection(col)
 
     if doc is None:
         return
     else:
         print_doc_formatado(doc)
-        
+
+    salvar_no_redis(doc, doc_name.lower())
