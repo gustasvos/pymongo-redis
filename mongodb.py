@@ -54,7 +54,5 @@ def read_document(col, doc_name):
 
     if doc is None:
         return
-    else:
-        print_doc_formatado(doc)
 
-    salvar_no_redis(doc, doc_name.lower())
+    return salvar_no_redis(doc, doc_name.lower())
