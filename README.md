@@ -1,3 +1,11 @@
+# Redispy
+
+Manipulação de documentos mongodb e redis.
+
+Um documento presente em uma collection do Mongodb pode ser inserido a um database no Redis, ser alterado por lá e devolvido a mesma collection.
+
+Este código funciona para os dados inseridos através do código presente em [meu outro repositório](https://github.com/gustasvos/pymongo).
+
 # Como rodar
 
 Crie o arquivo `.env` na raiz do projeto e insira sua URI do mongodb, e o host e senha do redis:
